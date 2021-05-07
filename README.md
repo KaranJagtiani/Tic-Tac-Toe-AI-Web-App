@@ -20,11 +20,9 @@ Web-based Tic-Tac-Toe game to play against various Artificial Intelligence algor
 `https://git-scm.com/downloads`
 2. Node JS (LTS) (Download & Install)  
 `https://nodejs.org/en/download/`
-3. Mongo DB (v4.4.3) (Download & Install)  
-`https://www.mongodb.com/try/download/community`
-4. Angular 10.x.x (Run Command)  
+3. Angular 10.x.x (Run Command)  
 `npm install -g @angular/cli@latest`
-5. Nodemon (Run Command)  
+4. Nodemon - Optional (Run Command)  
 `npm install -g nodemon`
 
 ## How to Install & Run the App
@@ -36,7 +34,7 @@ i) In the **root directory**, run the command:
 ii) Go to the **'angular-src'** directory and again run:  
 `npm install`
 3. In the **root directory**, run the command:  
-`nodemon`
+`nodemon` or `node app.js`
 4. Go to the **'angular-src'** directory and run the command:  
 `ng serve`
 5. Open a browser and go to the following URL:  
