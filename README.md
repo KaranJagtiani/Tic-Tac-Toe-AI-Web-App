@@ -1,6 +1,8 @@
 # Tic-Tac-Toe-Using-AI
 Web-based Tic-Tac-Toe game to play against various Artificial Intelligence algorithms
 
+### Click here to checkout the [Live Site](https://tic-tac-toe-using-ai.herokuapp.com/).
+
 ## AI Algorithms
 1. Minimax Algorithm
 2. Alpha-Beta Pruning Algorithm
