@@ -20,7 +20,7 @@ Web-based Tic-Tac-Toe game to play against various Artificial Intelligence algor
 `https://git-scm.com/downloads`
 2. Node JS (LTS) (Download & Install)  
 `https://nodejs.org/en/download/`
-3. Angular 10.x.x (Run Command)  
+3. Angular Latest Version (Run Command)  
 `npm install -g @angular/cli@latest`
 4. Nodemon - Optional (Run Command)  
 `npm install -g nodemon`
