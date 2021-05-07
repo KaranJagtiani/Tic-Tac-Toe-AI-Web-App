@@ -1,0 +1,69 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'Open-Sans';
+  src: url('./assets/Open_Sans/OpenSans-SemiBold.ttf');
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Open-Sans";
+}
+
+* {
+  font-family: "Open-Sans";
+  -webkit-font-smoothing: antialiased !important;
+}
+
+:root {
+  --primary-color: #fa183d;
+}
+
+body {
+  --text-color: #222222;
+  --bkg-color: #ffffff;
+  --task-bg-color: #eeeeee;
+  --scroll-bar-thumb-color: #c1c1c1;
+  --scroll-bar-track-color: #f1f1f1;
+  --text-color: #1d1d1d;
+}
+
+body.dark-theme {
+  --text-color: #eeeeee;
+  --bkg-color: #202124;
+  --task-bg-color: #181818;
+  --scroll-bar-thumb-color: #424242;
+  --scroll-bar-track-color: #202124;
+  --text-color: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --text-color: #222222;
+    --bkg-color: #ffffff;
+    --scroll-bar-thumb-color: #c1c1c1;
+    --scroll-bar-track-color: #f1f1f1;
+    --text-color: #1d1d1d;
+  }
+  body.light-theme {
+    --text-color: #eeeeee;
+    --bkg-color: #202124;
+    --task-bg-color: #181818;
+    --scroll-bar-thumb-color: #424242;
+    --scroll-bar-track-color: #202124;
+    --text-color: #ffffff;
+  }
+}
+
+body {
+  background: var(--bkg-color);
+}
+
+h1,
+p {
+  color: var(--text-color);
+}

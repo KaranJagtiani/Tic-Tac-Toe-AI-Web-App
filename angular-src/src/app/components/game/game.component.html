@@ -1,0 +1,123 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-4 col-lg-3">
+      <div class="dashboard">
+        <div class="p-2"></div>
+        <p class="h4 text-center">
+          Dashboard
+        </p>
+        <hr>
+
+        <div class="select">
+          <select (change) = "algorithmSelected($event.target.value)" name="slct" id="slct">
+            <option value="1" [disabled] = "gameStarted">Two Player</option>
+            <option value="2" [disabled] = "gameStarted">Random</option>
+            <option value="3" [disabled] = "gameStarted">Minimax</option>
+            <option value="4" [disabled] = "gameStarted">Alpha-Beta Pruning</option>
+            <option value="5" [disabled] = "gameStarted">Hill Climbing</option>
+            <!-- <option value="6" [disabled] = "gameStarted">A* Algorithm</option> -->
+          </select>
+        </div>
+
+        <div class="p-2"></div>
+        <p class="h5 text-center">
+          Score
+        </p>
+
+        <div class="row mt-2">
+          <div class="col-6">
+            <p class="h5 text-center">
+              <span class = "x-score">X: </span> {{xScore}}
+            </p>
+          </div>
+          <div class="col-6">
+            <p class="h5 text-center">
+              <span class = "o-score">O: </span> {{oScore}}
+            </p>
+          </div>
+        </div>
+        
+        <div class = "win-list text-left">
+          <div class = "mt-4" *ngFor="let win of winsList; let i = index">
+            <p *ngIf = "winsList[winsList.length-i-1].winner == 'x'" class="h5">
+              {{winsList.length-i}})&nbsp; <span class = "x-score">X</span> Won the Game!
+            </p>
+            <p *ngIf = "winsList[winsList.length-i-1].winner == 'o'" class="h5">
+              {{winsList.length-i}})&nbsp; <span class = "o-score">O</span> Won the Game!
+            </p>
+            <p *ngIf = "winsList[winsList.length-i-1].winner == 'd'" class="h5">
+              {{winsList.length-i}})&nbsp; Draw
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-sm-9 col-md-8 col-lg-9">
+      <app-confetti *ngIf="winner"></app-confetti>
+      <div class="bring-front">
+        <div class="p-2"></div>
+        <p class="h1 text-center">Tic Tac Toe</p>
+        <div class="text-center p-4">
+          <button *ngIf="winner || draw" (click)="resetGame()" class="reset-btn btn btn-danger">
+            <span>New Game</span>
+          </button>
+          <p class="h4">
+            <span class = "x-turn" *ngIf="firstTurn">X's Turn</span>
+            <span class = "o-turn" *ngIf="!firstTurn">O's Turn</span>
+          </p>
+        </div>
+        <div class="p-2"></div>
+        <table>
+          <tr>
+            <td class="one" (click)="makeMoveOne()">
+              <div *ngIf="moves[0][0] == 'x'" id="cross"></div>
+              <div *ngIf="moves[0][0] == 'o'" id="circle"></div>
+            </td>
+            <td id="two" (click)="makeMoveTwo()" class="vert">
+              <div *ngIf="moves[0][1] == 'x'" id="cross"></div>
+              <div *ngIf="moves[0][1] == 'o'" id="circle"></div>
+            </td>
+            <td id="three" (click)="makeMoveThree()">
+              <div *ngIf="moves[0][2] == 'x'" id="cross"></div>
+              <div *ngIf="moves[0][2] == 'o'" id="circle"></div>
+            </td>
+          </tr>
+          <tr>
+            <td (click)="makeMoveFour()" class="hori">
+              <div *ngIf="moves[1][0] == 'x'" id="cross"></div>
+              <div *ngIf="moves[1][0] == 'o'" id="circle"></div>
+            </td>
+            <td (click)="makeMoveFive()" class="vert hori">
+              <div *ngIf="moves[1][1] == 'x'" id="cross"></div>
+              <div *ngIf="moves[1][1] == 'o'" id="circle"></div>
+            </td>
+            <td (click)="makeMoveSix()" class="hori">
+              <div *ngIf="moves[1][2] == 'x'" id="cross"></div>
+              <div *ngIf="moves[1][2] == 'o'" id="circle"></div>
+            </td>
+          </tr>
+          <tr>
+            <td (click)="makeMoveSeven()">
+              <div *ngIf="moves[2][0] == 'x'" id="cross"></div>
+              <div *ngIf="moves[2][0] == 'o'" id="circle"></div>
+            </td>
+            <td (click)="makeMoveEight()" class="vert">
+              <div *ngIf="moves[2][1] == 'x'" id="cross"></div>
+              <div *ngIf="moves[2][1] == 'o'" id="circle"></div>
+            </td>
+            <td (click)="makeMoveNine()">
+              <div *ngIf="moves[2][2] == 'x'" id="cross"></div>
+              <div *ngIf="moves[2][2] == 'o'" id="circle"></div>
+            </td>
+          </tr>
+        </table>
+        <div class="p-2"></div>
+        <div class="text-center">
+          <p class="h3" *ngIf="winnerWho">{{winnerWho}}</p>
+          <p class="h3" *ngIf="!winnerWho">&nbsp;</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

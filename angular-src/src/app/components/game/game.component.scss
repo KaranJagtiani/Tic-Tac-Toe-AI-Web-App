@@ -1,0 +1,164 @@
+$circle-color: #248aff;
+$cross-color: #ff2a6a;
+$line-color: var(--text-color);
+
+.x-score {
+  color: $cross-color;
+}
+
+.o-score {
+  color: $circle-color;
+}
+
+.win-list {
+  height: 50vh;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+// Dashboard
+.dashboard {
+  margin-top: 20px;
+  background: var(--task-bg-color);
+  padding: 0 10px;
+  height: 95%;
+}
+
+h1 {
+  margin: 0 0 0.25em;
+}
+/* Reset Select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #1d1d1d;
+  background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.select {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 3em;
+  line-height: 3;
+  background: #1d1d1d;
+  overflow: hidden;
+  border-radius: 0.25em;
+}
+select {
+  flex: 1;
+  padding: 0 0.5em;
+  color: #fff;
+  cursor: pointer;
+}
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: var(--primary-color);
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+}
+/* Transition */
+.select:hover::after {
+  color: #ffffff;
+}
+
+// -- Dashboard
+
+.reset-btn {
+  position: absolute;
+  margin-left: -55px;
+}
+
+.x-turn {
+  color: $cross-color;
+}
+
+.o-turn {
+  color: $circle-color;
+}
+
+.winner {
+  color: #29e681;
+}
+
+h1 {
+  text-align: center;
+}
+td {
+  width: 130px;
+  height: 130px;
+}
+table {
+  margin: 5px auto;
+}
+.vert {
+  border-left: 2px solid $line-color;
+  border-right: 2px solid $line-color;
+}
+.hori {
+  border-top: 2px solid $line-color;
+  border-bottom: 2px solid $line-color;
+}
+
+#circle {
+  position: absolute;
+  margin-left: 21px;
+  margin-top: -40px;
+  border: 3px solid $circle-color;
+  border-radius: 50%;
+  width: 85px;
+  height: 85px;
+}
+
+#cross {
+  position: relative;
+}
+#cross:hover {
+  opacity: 1;
+}
+#cross:before,
+#cross:after {
+  position: absolute;
+  left: 60px;
+  top: -45px;
+  content: " ";
+  height: 95px;
+  width: 2px;
+  background-color: $cross-color;
+}
+#cross:before {
+  transform: rotate(45deg);
+}
+#cross:after {
+  transform: rotate(-45deg);
+}
+
+@media only screen and (max-width: 768px) {
+  #circle {
+    margin-left: 13px;
+    margin-top: -43px;
+  }
+
+  #cross:before,
+  #cross:after {
+    left: 55px;
+    top: -50px;
+  }
+}
